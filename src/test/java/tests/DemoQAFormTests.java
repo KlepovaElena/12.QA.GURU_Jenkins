@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -10,6 +11,7 @@ public class DemoQAFormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
 
+    @Tag("JenkinsTest")
     @Test
     void fillFormTest() {
 

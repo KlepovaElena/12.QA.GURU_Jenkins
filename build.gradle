@@ -41,6 +41,11 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
-    systemProperties(System.getProperties())
+
+    task first_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("JenkinsTest")
+        }
+        systemProperties(System.getProperties())
+    }
 }
