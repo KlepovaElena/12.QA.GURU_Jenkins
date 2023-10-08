@@ -35,7 +35,6 @@ public class TestBase {
 
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
-
     }
 
     @BeforeEach

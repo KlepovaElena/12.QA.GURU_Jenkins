@@ -11,7 +11,6 @@ public class DemoQAFormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     TestData testData = new TestData();
 
-    @Tag("JenkinsTest")
     @Test
     void fillFormTest() {
 
