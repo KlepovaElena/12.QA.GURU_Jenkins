@@ -72,8 +72,12 @@ public class RandomUtils {
     }
 
     public String getRandomDay() {
-        int day = faker.number().numberBetween(1,30);
-        if (day < 10) {return "0" + day;} else {return Integer.toString(day);}
+        int day = faker.number().numberBetween(1, 30);
+        if (day < 10) {
+            return "0" + day;
+        } else {
+            return Integer.toString(day);
+        }
     }
 
     public String getRandomMonth() {

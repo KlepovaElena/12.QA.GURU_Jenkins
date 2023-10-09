@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,12 +21,16 @@ public class Attach {
     }
 
     @Attachment(value = "Page source", type = "text/plain")
-    public static byte[] pageSource() { return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8); }
+    public static byte[] pageSource() {
+        return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
+    }
 
     @Attachment(value = "{attachName}", type = "text/plain")
-    public static String attachAsText(String attachName, String message) { return message; }
+    public static String attachAsText(String attachName, String message) {
+        return message;
+    }
 
-    public static  void browserConsoleLogs() {
+    public static void browserConsoleLogs() {
 
         attachAsText(
                 "Browser console logs:",
@@ -53,5 +56,4 @@ public class Attach {
         }
         return null;
     }
-
 }
