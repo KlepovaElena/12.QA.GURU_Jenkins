@@ -18,9 +18,14 @@ public class TestBase {
     @BeforeAll
     public static void beforeAll() {
 
-        Configuration.browserSize = "1920x1080";
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "117.0");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        String remoteDriver = System.getProperty("remoteDriver", "https://user1:1234@selenoid.autotests.cloud/");
+        Configuration.remote = System.getProperty("remoteDriver");
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = false;
+
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -31,10 +36,6 @@ public class TestBase {
 
 
         Configuration.browserCapabilities = capabilities;
-
-
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-
     }
 
     @BeforeEach
