@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static java.lang.String.format;
 
 public class TestBase {
 
@@ -20,21 +21,16 @@ public class TestBase {
 
         Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "117.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-
-        Configuration.remote = System.getProperty("remoteDriver");;
+        Configuration.browserVersion = System.getProperty("version", "100.0");
+        String webDriver = System.getProperty("webDriver", "https://user1:1234@selenoid.autotests.cloud/");
+        Configuration.remote = format("%swd/hub", webDriver);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
                 "enableVideo", true
         ));
-
-
         Configuration.browserCapabilities = capabilities;
     }
 
