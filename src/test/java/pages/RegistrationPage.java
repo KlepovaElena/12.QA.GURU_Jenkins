@@ -30,7 +30,7 @@ public class RegistrationPage {
             tableTitle = $("#example-modal-sizes-title-lg");
 
     public RegistrationPage openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
