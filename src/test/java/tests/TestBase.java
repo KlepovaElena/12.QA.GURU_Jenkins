@@ -24,6 +24,7 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browserVersion = System.getProperty("version", "100.0");
         String webDriver = System.getProperty("webDriver", "https://user1:1234@selenoid.autotests.cloud/");
+        Configuration.remote = System.getProperty("remoteDriver");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
