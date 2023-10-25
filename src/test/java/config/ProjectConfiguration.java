@@ -11,6 +11,7 @@ public class ProjectConfiguration {
     }
 
     public void webConfig() {
+
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
