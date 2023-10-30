@@ -12,10 +12,14 @@ public class ProjectConfiguration {
 
     public void webConfig() {
 
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\lenac\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("selenide.browser", "Chrome");
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
         Configuration.browserSize = webConfig.browserSize();
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.timeout = 10000;
         if (webConfig.isRemote()) {
             Configuration.remote = webConfig.remoteUrl();
             DesiredCapabilities capabilities = new DesiredCapabilities();

@@ -27,12 +27,8 @@ public class TestBase {
     @BeforeAll
     public static void beforeAll() {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\lenac\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-        System.setProperty("selenide.browser", "Chrome");
         ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
         projectConfiguration.webConfig();
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 10000;
     }
 
     @BeforeEach
